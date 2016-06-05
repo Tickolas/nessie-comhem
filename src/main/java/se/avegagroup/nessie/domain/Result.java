@@ -1,13 +1,13 @@
 package se.avegagroup.nessie.domain;
 
-import se.avegagroup.nessie.service.CalculationService;
+import se.avegagroup.nessie.service.CalculationService.Strategy;
 
 public class Result {
-	private final CalculationService.Strategy strategy;
+	private final Strategy strategy;
 	private int successes;
 	private int failures;
 
-	public Result(CalculationService.Strategy strategy) {
+	public Result(Strategy strategy) {
 		this.strategy = strategy;
 	}
 
