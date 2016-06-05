@@ -14,7 +14,7 @@ import static se.avegagroup.nessie.service.CalculationService.Strategy.SWITCH;
 @Service
 public class CalculationService {
 	private static final Random RANDOM_NUMBER_GENERATOR = new Random();
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 
 	public enum Strategy {
 		STAY,
@@ -26,14 +26,40 @@ public class CalculationService {
 		}
 	}
 
+	/**
+	 * Run a number of simulations with the STAY strategy.
+	 *
+	 * When we select a lake, stay on it no matter what!
+	 *
+	 * @param numberOfLakes Number of lakes to generate.
+	 * @param simulations Number of simulations to run.
+	 * @return The result of the simulations.
+	 */
 	public Result runStaySimulationsWith(int numberOfLakes, int simulations) {
 		return runSimulation(STAY, numberOfLakes, simulations);
 	}
 
+	/**
+	 * Run a number of simulations with the SWITCH strategy.
+	 *
+	 * When told that one of the other lakes doesn't hold Nessie, always switch!
+	 *
+	 * @param numberOfLakes Number of lakes to generate.
+	 * @param simulations Number of simulations to run.
+	 * @return The result of the simulations.
+	 */
 	public Result runSwitchSimulationsWith(int numberOfLakes, int simulations) {
 		return runSimulation(SWITCH, numberOfLakes, simulations);
 	}
 
+	/**
+	 * Run a simulation of a selected strategy.
+	 *
+	 * @param strategy The strategy to use, stay or switch lakes.
+	 * @param numberOfLakes Number of lakes to generate for each iteration.
+	 * @param simulations Number of simulations to run.
+	 * @return The result of the simulations.
+	 */
 	private Result runSimulation(Strategy strategy, int numberOfLakes, int simulations) {
 		Result result = new Result(strategy);
 
@@ -58,8 +84,6 @@ public class CalculationService {
 			log("------ END " + strategy + " SIM ------");
 			log("");
 		}
-
-		System.out.println(result);
 
 		return result;
 	}

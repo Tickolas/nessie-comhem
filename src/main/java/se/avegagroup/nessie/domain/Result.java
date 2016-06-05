@@ -45,6 +45,7 @@ public class Result {
 	@Override
 	public String toString() {
 		return "Strategy: " + strategy + " succeeded " + successes + " times and failed "
-				+ failures + " times! That's a " + percentify() + "% chance of success!";
+				+ failures + " out of " + (successes + failures) + " times! That's a " + percentify()
+				+ "% chance of success!";
 	}
 }
