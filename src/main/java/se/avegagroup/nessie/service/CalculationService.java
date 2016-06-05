@@ -16,16 +16,6 @@ public class CalculationService {
 	private static final Random RANDOM_NUMBER_GENERATOR = new Random();
 	private static final boolean DEBUG = false;
 
-	public enum Strategy {
-		STAY,
-		SWITCH;
-
-		@Override
-		public String toString() {
-			return this.name();
-		}
-	}
-
 	/**
 	 * Run a number of simulations with the STAY strategy.
 	 *
@@ -174,6 +164,16 @@ public class CalculationService {
 	private void log(String message) {
 		if(DEBUG) {
 			System.out.println(message);
+		}
+	}
+
+	public enum Strategy {
+		STAY,
+		SWITCH;
+
+		@Override
+		public String toString() {
+			return this.name();
 		}
 	}
 }
