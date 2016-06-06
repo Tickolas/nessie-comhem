@@ -1,4 +1,4 @@
-package se.avegagroup.service;
+package se.avegagroup.unit.service;
 
 import org.junit.Test;
 import se.avegagroup.nessie.domain.Result;

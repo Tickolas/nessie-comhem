@@ -1,4 +1,4 @@
-package se.avegagroup.domain;
+package se.avegagroup.unit.domain;
 
 import org.junit.Test;
 import se.avegagroup.nessie.domain.Lake;

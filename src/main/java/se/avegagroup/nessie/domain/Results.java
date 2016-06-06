@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static java.lang.Integer.compare;
+import static se.avegagroup.nessie.service.CalculationService.Strategy.NA;
 
 public class Results {
 	private int simulations;
@@ -33,7 +34,7 @@ public class Results {
 		if(bestResult.isPresent()) {
 			return bestResult.get().getStrategy();
 		} else {
-			return null;
+			return NA;
 		}
 	}
 

@@ -169,7 +169,8 @@ public class CalculationService {
 
 	public enum Strategy {
 		STAY,
-		SWITCH;
+		SWITCH,
+		NA;
 
 		@Override
 		public String toString() {

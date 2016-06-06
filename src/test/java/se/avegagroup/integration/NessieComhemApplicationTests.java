@@ -1,4 +1,4 @@
-package se.avegagroup;
+package se.avegagroup.integration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
