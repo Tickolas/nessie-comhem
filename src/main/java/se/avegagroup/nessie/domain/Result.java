@@ -19,8 +19,20 @@ public class Result {
 		}
 	}
 
-	private String percentify() {
-		return String.valueOf(successes * 100 / (successes + failures));
+	public Strategy getStrategy() {
+		return strategy;
+	}
+
+	public int getSuccesses() {
+		return successes;
+	}
+
+	public int getFailures() {
+		return failures;
+	}
+
+	public int getSuccessRate() {
+		return successes * 100 / (successes + failures);
 	}
 
 	@Override
@@ -45,7 +57,7 @@ public class Result {
 	@Override
 	public String toString() {
 		return "Strategy: " + strategy + " succeeded " + successes + " times and failed "
-				+ failures + " out of " + (successes + failures) + " times! That's a " + percentify()
+				+ failures + " out of " + (successes + failures) + " times! That's a " + getSuccessRate()
 				+ "% chance of success!";
 	}
 }
