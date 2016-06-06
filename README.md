@@ -31,3 +31,10 @@ mvn spring-boot:run
 
 Kör tester genom att skriva:
 mvn verify
+
+# Möjligheter för vidareutveckling
+I längden hade jag även velat göra vissa vidareutvecklingar så som:
+
+- Implementera concurrency, både för de olika strategierna då båda körs samtidigt och för flera användare.
+- Ersätta viss logik med lambdas, särskilt då jag manipulerar enstaka element i en lista.
+- Använda Mockito eller dylikt i unit-tester för att mocka bort slumpmässigheten och testa mer precist. Har dock förberett för detta genom att göra random-funktioner spy-vänliga.
