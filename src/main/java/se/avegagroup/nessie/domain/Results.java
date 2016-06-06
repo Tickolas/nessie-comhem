@@ -1,13 +1,13 @@
 package se.avegagroup.nessie.domain;
 
-import se.avegagroup.nessie.service.CalculationService.Strategy;
+import se.avegagroup.nessie.service.SimulationService.Strategy;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import static java.lang.Integer.compare;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.NA;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.NA;
 
 public class Results {
 	private int simulations;

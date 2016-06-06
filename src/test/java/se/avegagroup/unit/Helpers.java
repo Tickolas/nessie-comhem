@@ -2,10 +2,10 @@ package se.avegagroup.unit;
 
 import se.avegagroup.nessie.domain.Lake;
 import se.avegagroup.nessie.domain.Result;
-import se.avegagroup.nessie.service.CalculationService;
+import se.avegagroup.nessie.service.SimulationService;
 
 public class Helpers {
-	public static Result generateResult(CalculationService.Strategy strategy, int failures, int successes) {
+	public static Result generateResult(SimulationService.Strategy strategy, int failures, int successes) {
 		Result result = new Result(strategy);
 
 		for (int i = 0; i < failures; i++) {

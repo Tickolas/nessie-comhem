@@ -1,8 +1,8 @@
 package se.avegagroup.nessie.domain;
 
-import se.avegagroup.nessie.service.CalculationService.Strategy;
+import se.avegagroup.nessie.service.SimulationService.Strategy;
 
-import static se.avegagroup.nessie.service.CalculationService.Strategy.NA;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.NA;
 
 public class Result {
 	private final Strategy strategy;

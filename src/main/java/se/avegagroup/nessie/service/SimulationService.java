@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static se.avegagroup.nessie.service.CalculationService.Strategy.STAY;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.SWITCH;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.STAY;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.SWITCH;
 
 @Service
-public class CalculationService {
+public class SimulationService {
 	private static final Random RANDOM_NUMBER_GENERATOR = new Random();
 	private static final boolean DEBUG = false;
 

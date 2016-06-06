@@ -5,11 +5,11 @@ import se.avegagroup.nessie.domain.Results;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.NA;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.NA;
 import static se.avegagroup.unit.Helpers.generateResult;
 import static se.avegagroup.nessie.domain.Results.resultsOf;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.STAY;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.SWITCH;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.STAY;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.SWITCH;
 
 public class ResultsTest {
 	@Test

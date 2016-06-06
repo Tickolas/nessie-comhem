@@ -11,11 +11,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
 import se.avegagroup.nessie.NessieComhemApplication;
 import se.avegagroup.nessie.domain.Results;
-import se.avegagroup.nessie.service.CalculationService;
 
 import static org.hamcrest.Matchers.is;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.STAY;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.SWITCH;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.STAY;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.SWITCH;
 
 @WebIntegrationTest
 @RunWith(SpringJUnit4ClassRunner.class)

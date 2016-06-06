@@ -6,7 +6,7 @@ import se.avegagroup.nessie.domain.Result;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static se.avegagroup.unit.Helpers.generateResult;
-import static se.avegagroup.nessie.service.CalculationService.Strategy.SWITCH;
+import static se.avegagroup.nessie.service.SimulationService.Strategy.SWITCH;
 
 public class ResultTest {
 	@Test
