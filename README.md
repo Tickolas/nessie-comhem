@@ -28,3 +28,6 @@ mvn package
 
 Kör sedan programmet genom att skriva:
 mvn spring-boot:run
+
+Kör tester genom att skriva:
+mvn verify
