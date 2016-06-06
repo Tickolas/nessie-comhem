@@ -14,9 +14,12 @@ public class Results {
 	private int lakes;
 	private List<Result> results;
 
-	private Results(int simulations, int lakes, Result... results) {
-		this.simulations = simulations;
+	public Results() {
+	}
+
+	private Results(int lakes, int simulations, Result... results) {
 		this.lakes = lakes;
+		this.simulations = simulations;
 		this.results = Arrays.asList(results);
 	}
 
@@ -42,7 +45,16 @@ public class Results {
 		return results;
 	}
 
-	public static Results resultsOf(int simulations, int lakes, Result... results) {
-		return new Results(simulations, lakes, results);
+	public static Results resultsOf(int lakes, int simulations, Result... results) {
+		return new Results(lakes, simulations, results);
+	}
+
+	@Override
+	public String toString() {
+		return "Results{" +
+				"simulations=" + simulations +
+				", lakes=" + lakes +
+				", results=" + results +
+				'}';
 	}
 }
