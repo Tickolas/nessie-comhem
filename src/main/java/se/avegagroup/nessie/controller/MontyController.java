@@ -2,6 +2,7 @@ package se.avegagroup.nessie.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import se.avegagroup.nessie.domain.Result;
@@ -19,10 +20,32 @@ public class MontyController {
 	private CalculationService calculationService;
 
 	@RequestMapping(method = GET)
-	public @ResponseBody
-	Results getString() {
-		Result staySimulation = calculationService.runStaySimulationsWith(DEFAULT_NUMBER_OF_LAKES, DEFAULT_NUMBER_OF_SIMULATIONS);
-		Result switchSimulation = calculationService.runSwitchSimulationsWith(DEFAULT_NUMBER_OF_LAKES, DEFAULT_NUMBER_OF_SIMULATIONS);
-		return Results.resultsOf(DEFAULT_NUMBER_OF_LAKES, DEFAULT_NUMBER_OF_SIMULATIONS, staySimulation, switchSimulation);
+	public
+	@ResponseBody
+	Results bothStrategies() {
+		return bothStrategies(DEFAULT_NUMBER_OF_LAKES, DEFAULT_NUMBER_OF_SIMULATIONS);
+	}
+
+	@RequestMapping(method = GET, path = "/both")
+	public @ResponseBody Results bothStrategies(
+			@RequestParam(name = "numberOfLakes", required = false, defaultValue = "" + DEFAULT_NUMBER_OF_LAKES) int numberOfLakes,
+			@RequestParam(name = "simulations", required = false, defaultValue = "" + DEFAULT_NUMBER_OF_SIMULATIONS) int simulations) {
+		Result staySimulation = calculationService.runStaySimulationsWith(numberOfLakes, simulations);
+		Result switchSimulation = calculationService.runSwitchSimulationsWith(numberOfLakes, simulations);
+		return Results.resultsOf(numberOfLakes, simulations, staySimulation, switchSimulation);
+	}
+
+	@RequestMapping(method = GET, path = "/switch")
+	public Results switchStrategy(
+			@RequestParam(name = "numberOfLakes", required = false, defaultValue = "" + DEFAULT_NUMBER_OF_LAKES) int numberOfLakes,
+			@RequestParam(name = "simulations", required = false, defaultValue = "" + DEFAULT_NUMBER_OF_SIMULATIONS) int simulations) {
+		return Results.resultsOf(simulations, numberOfLakes, calculationService.runSwitchSimulationsWith(numberOfLakes, simulations));
+	}
+
+	@RequestMapping(method = GET, path = "/stay")
+	public Results stayStrategy(
+			@RequestParam(name = "numberOfLakes", required = false, defaultValue = "" + DEFAULT_NUMBER_OF_LAKES) int numberOfLakes,
+			@RequestParam(name = "simulations", required = false, defaultValue = "" + DEFAULT_NUMBER_OF_SIMULATIONS) int simulations) {
+		return Results.resultsOf(simulations, numberOfLakes, calculationService.runStaySimulationsWith(numberOfLakes, simulations));
 	}
 }
